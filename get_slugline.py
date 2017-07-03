@@ -8,10 +8,12 @@ import urllib.request
 from credentials import user,pw
 from xml.etree import ElementTree
 import logging
+from functools import lru_cache
 
 logger=logging.getLogger(__name__)
 logging.basicConfig(level=logging.DEBUG,stream=sys.stderr)
 
+@lru_cache(maxsize=500)
 def get_slugline(dpa_id_link):
     url="https://pipette.dpa-newslab.com/pipette/api/doc-raw/%s"%dpa_id_link
 
