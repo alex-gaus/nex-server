@@ -3,6 +3,25 @@
       <script>
             word_data={{output_evaluation["output_dict"]|tojson|safe}}
       </script>
+
+
+<style>
+
+
+ #text span {
+ }
+
+
+ #text span.hovered {
+        background-color: #ffff00;
+ }
+
+ #text span.selected {
+        background-color: #ffff60;
+ }
+
+</style>
+
   {% endblock head %}
 
 {% block title %}
@@ -41,15 +60,20 @@ Evaluation for {{dpa_id}}
 {% endblock caption %}
 
       {% block content_h %}
-            <div class="col-md-10">
+            <div id="text" class="col-md-6 col-sm-10">
             {%- for token in output_evaluation["text_dict"] -%}
                   <span id="{{token["key"]}}">{{token["text"]}}</span>
             {%- endfor -%}
+            </div>
+            <div class="col-md-6 col-sm-2">
+             <div class="hero">
+             </div>
             </div>
       {% endblock content_h %}
 
 {% block footer %}
 &copy; <a style="color: white" href="https://github.com/gobitodic/hug-minimal-server" target="_blank">Alex Gaus</a>&nbsp;&amp;&nbsp;<a style="color: white" href="https://github.com/dpa-newslab/" target="_blank">dpa-newslab</a>
+<script src="{{ PREFIX }}/static/app.bundle.js"></script>
 {% endblock footer %}
 
 

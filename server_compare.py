@@ -18,9 +18,18 @@ templates.globals=globals=dict(PREFIX=PREFIX)
 
 api=hug.http(prefixes=PREFIX)
 
-@hug.static("{PREFIX}/static".format(**globals))
-def static_dirs() :
-    return (os.path.join(_HERE,"static"),)
+if os.environ.get("HOME","").lower() == "/root" :
+
+    @hug.static("/static".format(**globals))
+    def static_dirs() :
+        return (os.path.join(_HERE,"static"),)
+
+else :
+
+    @hug.static("{PREFIX}/static".format(**globals))
+    def static_dirs() :
+        return (os.path.join(_HERE,"static"),)
+
 
 
 @api.get("/nex/start",output=hug.output_format.html,examples="nex/start?start=0&end=20")

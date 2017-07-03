@@ -28,6 +28,10 @@ docker-run:
 	docker run --publish 8001:8000 --name=nex_compare_server --rm nex:live
 
 
+server-run:
+	hug -f server_compare.py
+
+
 SESSION=nex-proxy
 
 remote:

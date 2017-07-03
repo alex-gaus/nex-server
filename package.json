@@ -1,0 +1,20 @@
+{
+  "name": "nex-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:gobitodic/nex-server.git",
+  "author": "Martin Virtel <martin.virtel@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jquery-hotkeys": "^0.2.2",
+    "jquery-keyboard-shortcuts": "^1.0.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "postcss-loader": "^2.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.0.0"
+  }
+}

@@ -1,0 +1,8 @@
+        #text span:hover {
+                background-color: #f0f0f0;
+        }
+        
+        #text span.selected {
+                border: 1px solid red;
+        }
+
