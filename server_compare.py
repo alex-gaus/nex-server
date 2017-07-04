@@ -52,7 +52,8 @@ def compare(dpa_id : str ,tool_code : str) :
         "d":"dandelion",
         "t":"txtwerk",
         "z":"textrazor",
-        "y":"aylien"
+        "y":"aylien",
+        "x":"txt_alt"
         # "s":"semantria"
         }
     layouts = [ "", "col-md-6", "col-md-6", "col-md-4","col-md-3","col-md-2","col-md-2","col-md-2"]
@@ -112,6 +113,8 @@ def overlap(dpa_id : str = "urn:newsml:dpa.com:20090101:170319-99-722478v-2"):
         dpa_id_link=dpa_id[:-3]
     elif dpa_id[-4:][0]=="v":
         dpa_id_link=dpa_id[:-4]
+    elif dpa_id[-5:][0]=="v":
+        dpa_id_link=dpa_id[:-5]
     from evaluation import evaluation
     output_evaluation=evaluation(dpa_id)
     from get_next import get_next

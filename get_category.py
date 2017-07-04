@@ -19,7 +19,7 @@ for uri_ in uris:
     category_start=uri_["category"]
     # print(uri_["label"])
     # Person:
-    if uri != None:
+    if uri != None and category_start== None:
         url_person= "".join(("https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=ASK%20%7B%20wd%3A",uri,"%20wdt%3AP31%2Fwdt%3AP279*%20wd%3AQ5%2C%20wd%3AQ215627%20%7D"))
         response_person = session.get(url_person)
         text_person=response_person.text
@@ -37,12 +37,11 @@ for uri_ in uris:
             x=2
 
         # Location:
-        # auch moeglich: https://www.wikidata.org/wiki/Q2221906 Geographicl Point
-        # url_location= "".join(("https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=ASK%20%7B%20wd%3A",uri,"%20wdt%3AP31%2Fwdt%3AP279*%20wd%3AQ1496967%2Cwd%3AQ82794%2Cwd%3AQ618123%7D"))
-        # response_location = session.get(url_location)
-        response_location=session.get("https://query.wikidata.org/bigdata/namespace/wdq/sparql",params=dict(query="""
-            ASK { wd:%(uri)s wdt:P31/wdt:P279* wd:Q1496967 }
-        """ % **locals()))
+        # Parameter: Q1496967: territorial entity , Q618123: geographical object, Q82794: geographic region Q2221906: geographical point
+        location_query=dict(query="""
+            ASK { wd:%(uri)s wdt:P31/wdt:P279* wd:Q1496967, wd:Q618123, wd:Q82794 }
+            """%locals())
+        response_location=session.get("https://query.wikidata.org/bigdata/namespace/wdq/sparql",params=location_query)
         text_location=response_location.text
         y_location=text_location.find("true")
         if y_location > -1:

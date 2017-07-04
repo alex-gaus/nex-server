@@ -16,11 +16,11 @@ import dataset
 
 db='sqlite:///nex-analysis.db'
 database = dataset.connect(db)
-uris=list(database.query("select uri from entity"))
+uris=list(database.query("select uri, label from entity"))
 entity_db=database["entity"]
 for uri in uris:
     try:
-        if uri["uri"]!= "" or uri["uri"]== None : 
+        if (uri["uri"]!= "" or uri["uri"]== None) and uri["label"]==None : 
             url= "".join(("https://query.wikidata.org/bigdata/namespace/wdq/sparql?query=PREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%20%0APREFIX%20wd%3A%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%20%0Aselect%20%20*%0Awhere%20%7B%0A%20%20%20%20%20%20%20%20wd%3A",uri["uri"],"%20rdfs%3Alabel%20%3Flabel%20.%0A%20%20FILTER%20(langMatches(%20lang(%3Flabel)%2C%20%22DE%22%20)%20)%0A%20%20%20%20%20%20%7D%20%0ALIMIT%201"))
             response = urllib.request.urlopen(url)
             text=response.read()

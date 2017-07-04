@@ -97,8 +97,10 @@ def mark_text (text_output,tools):
                 color= "lightpink"
             elif tool == tools[3]:
                 color= "PaleGoldenRod"
+            elif tool == tools[4]:
+                color= "aquamarine"
             else:
-                color = "turquoise"
+                color = "hotpink"
             try:
                 confidence=round((entities[x]["confidence"]-mean)/stdev,3)
             except TypeError:

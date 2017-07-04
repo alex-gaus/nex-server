@@ -22,7 +22,7 @@ def overlap(dpa_id,value):
     title=text_list[0]["title"]
 
     mixed_list=[]
-    for x in range (1,6):
+    for x in range (1,7):
         tool_id=x
         tool=list(database.query("""
             select 
