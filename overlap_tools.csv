@@ -1,0 +1,16 @@
+"tool_code","overlap","overlap_p","tool_1","differences_1","tool_2","differences_2"
+"aylien_ambiverse",799,0.07789802086380034,"aylien",2588,"ambiverse",6870
+"dandelion_ambiverse",2465,0.19293988728866626,"dandelion",5107,"ambiverse",5204
+"dandelion_aylien",598,0.05771643663739021,"dandelion",6974,"aylien",2789
+"textrazor_ambiverse",4447,0.253246013667426,"textrazor",9891,"ambiverse",3222
+"textrazor_aylien",934,0.05562503722232148,"textrazor",13404,"aylien",2453
+"textrazor_dandelion",4652,0.26955614787345,"textrazor",9686,"dandelion",2920
+"txt_alt_ambiverse",3028,0.28021469553951506,"txt_alt",3137,"ambiverse",4641
+"txt_alt_aylien",769,0.08755550495274964,"txt_alt",5396,"aylien",2618
+"txt_alt_dandelion",2900,0.2676017347974532,"txt_alt",3265,"dandelion",4672
+"txt_alt_textrazor",4616,0.2905520236671492,"txt_alt",1549,"textrazor",9722
+"txtwerk_ambiverse",3924,0.2728031145717464,"txtwerk",6715,"ambiverse",3745
+"txtwerk_aylien",838,0.0635426144980285,"txtwerk",9801,"aylien",2549
+"txtwerk_dandelion",4366,0.3153485012639942,"txtwerk",6273,"dandelion",3206
+"txtwerk_textrazor",7000,0.3893864382266229,"txtwerk",3639,"textrazor",7338
+"txtwerk_txt_alt",4840,0.40454697425610164,"txtwerk",5799,"txt_alt",1325

@@ -45,12 +45,18 @@ Overlap for {{dpa_id}}
 {% if slugline %}
 <div> <strong>dpa-keywords ("slugline"):</strong>
     {% for keyword in slugline %}
-        <mark style="background-color:{{output_overlap["color"]}};border: 2px solid grey">{{keyword}}</mark><span>&nbsp;</span>
+        <mark style="background-color:yellow;border: 2px solid grey">{{keyword}}</mark><span>&nbsp;</span>
     {% endfor %}
 </div>
 {% else %}
 <div> <span style="font-size: small"> no slugline </span></div>
 {% endif %}
+<p>&nbsp;</p>
+<div> <strong>Top 5 keywords (from Dandelion): </strong>
+    {% for top_entity in top_entities_final %}
+        <mark style="background-color:pink;border: 2px solid grey">{{top_entity}}</mark><span>&nbsp;</span>
+    {% endfor %}
+</div>
 {% endblock caption %}
 
 {% block content_h %}

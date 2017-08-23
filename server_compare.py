@@ -104,6 +104,8 @@ def overlap(dpa_id : str = "urn:newsml:dpa.com:20090101:170319-99-722478v-2", va
     next_dpa_id=get_next(dpa_id)
     from get_slugline import get_slugline
     slugline=get_slugline(dpa_id_link)
+    from top_entities import top_entities
+    top_entities_final=top_entities(dpa_id)
     return templates.get_template("overlap.html").render(**locals())
 
 @api.get("/nex/{dpa_id}/evaluation",output=hug.output_format.html,examples="/nex/urn:newsml:dpa.com:20090101:170526-99-612882v-2/evaluation")

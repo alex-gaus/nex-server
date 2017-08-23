@@ -1,6 +1,7 @@
 SHELL := /bin/bash
 
 
+
 deploy: docker-build-live docker-push hpa-restart
 
 
@@ -35,3 +36,8 @@ remote:
 	
 logs:
 	hpa show-log nex-live
+
+
+differences_view.csv: export-differences-view.sql nex-analysis.db
+	cat export-differences-view.sql |  sqlite3 nex-analysis.db
+	

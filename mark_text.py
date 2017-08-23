@@ -21,14 +21,15 @@ def mark_text (text_output,tools):
         from dpa_text  where
         dpa_id=:dpa_id
         """,dpa_id=dpa_id))[0]["rowid"]
+    print(tools)
     for tool in tools:
-
         tool_id=list(database.query("""
             select
             rowid
             from tools where
             tool=:tool
             """,tool=tool))[0]["rowid"]
+        print(tool_id)
         entities=list(database.query("""
             select
             start,end,surface, confidence, entity_id
